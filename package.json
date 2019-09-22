@@ -1,0 +1,24 @@
+{
+  "name": "Find-a-Friend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/domyorke/Find-a-Friend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/domyorke/Find-a-Friend/issues"
+  },
+  "homepage": "https://github.com/domyorke/Find-a-Friend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
