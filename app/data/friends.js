@@ -16,6 +16,7 @@ var friends = [{
 }
 ];
 
+module.exports = friends;
 
 //  // I added this below code so you could clear out the table while working with the functionality.
 //   // Don"t worry about it!
