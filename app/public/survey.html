@@ -25,9 +25,12 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+
+<div id = "mainBody">
+
     <h1>Survey Page</h1>
 
-    <form>
+    <form id = "mainForm">
 
         <div class="form-group">
             <label for="exampleInputEmail1">Your Name</label>
@@ -166,6 +169,8 @@
 
     <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
 
+</div>
+
     <script>
 
         //onclick for submit button
@@ -189,21 +194,29 @@
                 ]
             };
             console.log(userData);
+
+            function removeForm () {
+            $("#mainForm").remove();
+            $("#mainBody").prepend( 
+            '<h1>Your match is... </h1>'
+            )
+            }
+
+
             $.ajax({
                 type: "POST",
                 url: "/api/friends",
                 data: userData,
                 dataType: "json"
-            }, 
+            }).then(
+                removeForm()
+            );
 
-        function (data) {
-            console.log(data);
+            //After posting the new information to userdata, run a function to remove the form and display match information.
         });
-    })
+   
 
-
-
-
+     
     </script>
 
 </body>

@@ -5,18 +5,15 @@ var tableData = require("../data/friends.js");
 
 module.exports = function (app) {
 
-    app.get('/api/friends', function (req, res) {
+    app.get('/', function (req, res) {
         res.json(path.join(__dirname, './home.html'))
     });
 
+    app.get('/api/friends', function (req, res) {
+        res.json(tableData);
+    });
+
     app.post('/api/friends', function (req, res) {
-
-
-
-
-        //Comparison logic, select closest match, and convert to json object
-
-        // (DONE) Fill out the survey.html and include questions the user answers. Use HTML Form.
 
         // (DONE) In the survey.html using a script tag, grab the values of the user selected, and send a post request to /api/friends.
 
@@ -41,7 +38,7 @@ module.exports = function (app) {
         for (let i = 0; i < tableData.length; i++) {
             //Store existing Friends from tableData into a variable "friend"
             var friend = tableData[i];
-            console.log("EXISTING FRIEND = ", friend);
+            //console.log("EXISTING FRIEND = ", friend);
 
             //Define the sum of the difference between score arrays of the friend and newFriend.
             var diffSum = 0;
@@ -51,7 +48,7 @@ module.exports = function (app) {
                 var friendScore = friend.scores[j];
                 //Store the absolute value of the differences of the new Friend's scores vs the old friends' score
                 var diff = Math.abs(newFriend.dataScore[j] - friendScore);
-                console.log("SCORE DIFFERENCE = ", diff);
+                //console.log("SCORE DIFFERENCE = ", diff);
                 //Diff sum shows the total difference between the new score and old friend's score
                 diffSum = diffSum + diff;
             }
@@ -77,24 +74,14 @@ module.exports = function (app) {
 
         
 
-        console.log(friendData[indexOfResult]);
+        console.log(tableData[indexOfResult]);
 
         //putting into the friend array
-        friendData.push(newFriend);
-        res.json(friendData[indexOfResult]);
-
+        tableData.push(newFriend);
+        res.json(tableData[indexOfResult]);
+        //console.log("UPDATED TABLE DATA? = ", tableData);
 
         console.log("======================================")
-
-
-
-
-
-
-
-
-
-
 
 
         // tableData().push(req.body);
