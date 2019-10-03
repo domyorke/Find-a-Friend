@@ -25,7 +25,6 @@ module.exports = function (app) {
 
         //data should come thru on request.body. After this, do comparison logic inside this post route.
 
-
         console.log("REQ.BODY = ", req.body);
 
         var newFriend = req.body;
@@ -71,10 +70,10 @@ module.exports = function (app) {
 
 
 
-
         
 
-        console.log(tableData[indexOfResult]);
+        var finalResult = tableData[indexOfResult];
+        console.log("FINAL RESULT = ", tableData[indexOfResult]);
 
         //putting into the friend array
         tableData.push(newFriend);
