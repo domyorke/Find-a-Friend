@@ -1,3 +1,5 @@
+//Below data will hold all of our possible friends
+
 var friends = [{
   "name": "Ahmed",
   "photo": "https://i.imgur.com/uk6CFBG.jpg",
@@ -110,6 +112,7 @@ var friends = [{
 }
 ];
 
+// Here we export the array. this makes it accessible to other files using require.
 module.exports = friends;
 
 //  // I added this below code so you could clear out the table while working with the functionality.
